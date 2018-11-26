@@ -1,0 +1,177 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+
+
+  table {
+   border: 1px solid #999;
+   border-collapse: collapse;
+   font-family: Georgia, Times, serif;
+   margin: 0;
+   }
+   th {
+   border: 1px solid #999;
+   font-size: 70%;
+   text-transform: uppercase;
+   }
+   td {
+   border: 1px solid #999;
+   height: 5em;
+   width:5em;
+   padding: 5px;
+   vertical-align: top;
+   }
+   caption {
+   font-size: 300%;
+   font-style: italic;
+   }
+   .day {
+   text-align: right;
+   }
+   .dayp{
+       text-align: right;
+       color: lightgray;
+   }
+ /* .notes {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 80%;
+   text-align: right;
+   padding-left: 20px;
+   padding-top: 10%;
+   background-color: #ECE;
+   }
+   .mark {
+   background-color: #ECE;
+   }*/
+   .weekend {
+   background-color: #F3F3F3;
+   }.weekday {
+
+}
+
+.bild {
+    width: 5em;
+    height: 5em;
+    padding-right: 1px;
+}
+
+.bild1 {
+    width: 5em;
+    height: 5em;
+    padding-right: 1px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+h1 {text-align: center;
+    font-size: 3em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    font-weight: bold;
+    background: grey;
+}
+
+.top{
+    
+    left:0; right:0;
+  
+}
+
+.left{
+    position: absolute;
+    top: 80px; left:0;
+    right: 0;
+    margin: 0;
+}
+
+
+.bottom{
+
+    top:0; left: 0;
+    height: 0;
+    margin: 9%;
+    
+}
