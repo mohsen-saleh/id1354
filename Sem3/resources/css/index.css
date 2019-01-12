@@ -1,0 +1,196 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+        background-image: url("http://previews.123rf.com/images/nikkiphoto/nikkiphoto1404/nikkiphoto140400001/27569571-Fresh-organic-vegetables-Food-background-Healthy-food-from-garden-Stock-Photo.jpg")
+        
+}
+
+.body {
+    margin: 0 auto;
+    width: 100%;
+    clear: both;
+    background-color: grey;
+    left:0; right:0;
+    height:92px;
+   
+}
+
+
+ol, ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+.mainheader{
+    left:0; right:0;
+    height:50px;
+}
+
+.left{
+    position: absolute;
+    top: 80px; left:0;
+    right: 0;
+    bottom: 500px;
+}
+
+.bottom{
+    
+    top:0; left: 0;
+    right:0;
+    bottom: 100px;
+}
+
+.left {background: black; }
+.mainheader {background: white;}
+.bottom{background: white;}
+
+h1 {text-align: center;
+    font-size: 3em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    background-color: grey;
+}
+
+
+
+/* attribut för menyn */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
+/* attribut för commentar*/
+.mainContent{
+    line-height: 25px;
+     border-radius: 5px;
+    
+}
+.content{
+    width: 100%;
+    float: left;
+    
+    
+}
+
+.bild2 {
+    width: 10em;
+    height: 10em;
+    padding-right: 1px;
+}
+
+.topContent{
+    background-color: #FFF;
+    border-radius: 5px;
+    padding:3% 5%;
+    margin: 5%;
+}
+.bottomContent{
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 3% 5%;
+    margin: 5%;
+}
+.mainFooter{
+    width: 100%;
+    height:50px;
+    float: left;
+    border-radius: 5px;
+    background-color: #666;
+    margin: 0 0 2% 0;
+   
+}
+.post-info{
+    
+    color: #999;
+    font-size:85%;
+    
+    .bild1 {
+    width: 10em;
+    height: 10em;
+    padding-right: 1px;
+}
+}
+
+.login {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 3% 5%;
+    margin: 2%;
+    width: 25%;
+    margin-top: 5%;
+}
+
