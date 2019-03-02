@@ -18,7 +18,9 @@ if (isset($_POST['submit'])) {
 	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
 	
     $contr = new Controller();
-	$contr->signup($first, $last, $email, $uid, $pwd);
+	$signupstatus = $contr->signup($first, $last, $email, $uid, $pwd);
+    header("Location: resources/views/signup.php?signup=".$signupstatus);
+    
 }
     else {
 	   header("Location: resources/views/signup.php");

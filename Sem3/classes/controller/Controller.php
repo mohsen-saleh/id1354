@@ -16,17 +16,17 @@ class Controller
     
     public function login($username, $pwd){
         $user = new User();
-        $user->loginUser($username, $pwd);
+        return $user->loginUser($username, $pwd);
     }
     
     public function signup($first, $last, $email, $uid, $pwd) {
         $user = new User();
-        $user->signinUser($first, $last, $email, $uid, $pwd);
+        return $user->signinUser($first, $last, $email, $uid, $pwd);
     }
     
     public function logout(){
         $user = new User();
-        $user->logoutUser();
+        return $user->logoutUser();
     }
     
     public function setCommentM($uid, $date, $message) {

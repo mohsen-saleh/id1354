@@ -38,7 +38,7 @@ and open the template in the editor.
 
 <ul>
   <li><a href="start.php">Home</a></li>
-  <li><a href="calender.html">Calender</a></li>
+  <li><a href="calendar.html">Calendar</a></li>
   <li><a href="meatballs.php">Meatballs</a></li>
   <li><a href="pancakes.php">Pancakes</a></li>
   <li><a href="login.php">Login</a></li>

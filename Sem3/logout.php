@@ -7,5 +7,6 @@ use Controller\Controller;
 if (isset($_POST['submit'])) {
 	
     $contr = new Controller();
-	$contr->logout();
+	$logoutstatus = $contr->logout();
+    header("Location: resources/views/start.php?logout=".$logoutstatus);
 }

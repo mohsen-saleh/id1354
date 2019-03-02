@@ -5,7 +5,8 @@
    //include '../../classes/integration/DBH.php';
    //include '../../getCommentsM.php';
    include '../../comments.inc.php';
-   
+
+ 
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +99,7 @@ and open the template in the editor.
              </div>
      <?php
         if (isset($_SESSION['u_id'])) {
-           echo "<form method='POST' action='".setComments($conn)."'> 
+          echo "<form method='POST' action='".setComments($conn)."'>
             <input type='hidden' name='uid' value='".$_SESSION['u_id']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea name='message'></textarea><br>

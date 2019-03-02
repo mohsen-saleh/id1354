@@ -4,7 +4,7 @@
     use Controller\Controller;
 
 
-if (isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) {
 	
 	include 'classes/integration/dbh.inc.php';
 	
@@ -12,9 +12,12 @@ if (isset($_POST['submit'])) {
 	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
         
     $contr = new Controller();
-	$contr->login($uid, $pwd);
+	$loginstatus = $contr->login($uid, $pwd);
+    header("Location: resources/views/login.php?login=".$loginstatus);
         
-} else {
-	header("Location: resources/views/start.php?login=error");
+    } else {
+	header("Location: resources/views/login.php?login=error");
 	exit();
-}
+    }
+
+    

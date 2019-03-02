@@ -33,17 +33,29 @@ class DBH {
         return $result;
     }
     
-    function setComments($conn){
-        //include 'dbh.inc.php';
-    if (isset($_POST['commentSubmit'])) {
-        $uid = $_POST['uid'];
-        $date = $_POST['date'];
-        $message = $_POST['message'];
+    public function fetch_assoc($uid){
+        include 'dbh.inc.php';
         
-        $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
-        $result = mysqli_query($conn, $sql);
+        $result = $this->getUser($uid, $conn);
+        $row = mysqli_fetch_assoc($result);
+        return $row;
     }
-}
+    
+    public function checkResult($uid) {
+        include 'dbh.inc.php';
+        
+        $result = $this->getUser($uid, $conn);
+		$resultCheck = mysqli_num_rows($result);
+        return $resultCheck;
+    }
+    
+    public function checkResult2($uid) {
+        include 'dbh.inc.php';
+        
+        $result = $this->getUser2($uid, $conn);
+		$resultCheck = mysqli_num_rows($result);
+        return $resultCheck;
+    } 
     
     public function setComment($uid, $date, $message, $conn) {
         include 'dbh.inc.php';
@@ -51,6 +63,7 @@ class DBH {
         $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
         $result = $conn->query($sql);
     }
+    
     public function setCommentP($uid, $date, $message, $conn) {
         include 'dbhandler.inc.php';
         

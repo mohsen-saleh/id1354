@@ -1,5 +1,7 @@
 <?php
 namespace Model;
+$errors = array();
+
 /**
  * Description of login
  *
@@ -17,23 +19,19 @@ class User {
     //Error handlers
 	//Check if inputs are empty
 	if (empty($uid) || empty($pwd)) {
-		header("Location: resources/views/login.php?login=empty");
-		exit();
-	} else {
+		return "empty";
         
+	} else {
         $DBH = new DBH();
-		$result = $DBH->getUser($uid, $conn);
-		$resultCheck = mysqli_num_rows($result);
+		$resultCheck = $DBH->checkResult($uid);
 		if ($resultCheck < 1) {
-			header("Location: resources/views/login.php?login=error1");
-			exit();
+			return "error1";
 		} else {
-			if ($row = mysqli_fetch_assoc($result)) {
+			if ($row = $DBH->fetch_assoc($uid)) {
 				//De-hashing the password
 				$hashedPwdCheck = password_verify($pwd, $row['user_pwd']);
 				if ($hashedPwdCheck == false) {
-					header("Location: resources/views/login.php?login=error");
-					exit();
+					return "error";
 				} elseif ($hashedPwdCheck == true) {
 					//Log in the user here
 					$_SESSION['u_id'] = $row['user_id'];
@@ -41,8 +39,7 @@ class User {
 					$_SESSION['u_last'] = $row['user_last'];
 					$_SESSION['u_email'] = $row['user_email'];
 					$_SESSION['u_uid'] = $row['user_uid'];
-					header("Location: resources/views/start.php?login=success");
-					exit();
+                    return "success";
 				}
 			}
 		}
@@ -55,37 +52,29 @@ class User {
     //Error handlers
 	//Check for empty fields
 	if (empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd)) {
-		header("Location: resources/views/signup.php?signup=empty");
-		exit();
+		return "empty";
 	} else {
 		//Check if input characters are valid
 		if (!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last)) {
 			header("Location: resources/views/signup.php?signup=invalid");
-			exit();
+			return "invalid";
 		} else {
 			//Check if email is valid
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				header("Location: resources/views/signup.php?signup=email");
-				exit();
-			} else {
-                
+				return "invalidEmail";
+			} else {  
                 $DBH = new DBH();
-                $result = $DBH->getUser2($uid, $conn);
-				$resultCheck = mysqli_num_rows($result);
-				
+                $resultCheck = $DBH->checkResult2($uid);
                 if ($resultCheck > 0) {
-					header("Location: resources/views/signup.php?signup=usertaken");
-					exit();
+					return "usertaken";
 				} else {
 					//Hashing the password
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-					//Insert the user into the database
-                                        
+					
+                    //Insert the user into the database                   
                     $DBH = new DBH();
-					$DBH->insertUser($first, $last, $email, $uid, $hashedPwd, $conn);
-                                        
-					header("Location: resources/views/signup.php?signup=success");
-					exit();
+					$DBH->insertUser($first, $last, $email, $uid, $hashedPwd, $conn);                   
+					return "success";
 				}
 			}
 		}
@@ -95,7 +84,6 @@ class User {
         session_start();
 	    session_unset();
 	    session_destroy();
-	  header("Location: resources/views/start.php?logout=success");
-	 exit();
+	    return "success";
     }
 }

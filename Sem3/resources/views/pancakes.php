@@ -1,10 +1,10 @@
 <?php
+   session_start();
    date_default_timezone_set('Europe/Stockholm');
    include '../../classes/integration/dbh.inc.php';
    include '../../comments.inc.php';
    //include '../../getCommentsP.php';
    //include '../../classes/integration/DBH.php';
-   //session_start();
    
 ?>
 
@@ -85,7 +85,7 @@ and open the template in the editor.
              </div>
         <?php
         if (isset($_SESSION['u_id'])) {
-           echo "<form method='POST' action='".setComments($conn)."'> 
+           echo "<form method='POST' action='".setCommentsP($conn)."'> 
             <input type='hidden' name='uid' value='".$_SESSION['u_id']."'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
             <textarea name='message'></textarea><br>
@@ -96,7 +96,7 @@ and open the template in the editor.
             <br><br>";
        }       
        
-getComments($conn);   
+getCommentsP($conn);   
 ?> 
       
     </body>
